@@ -2,16 +2,20 @@
 
 Cross-project guides that apply to multiple LittleTalks repositories.
 
-## Documents to Migrate
+## Available Documents
 
-These documents currently live in `littletalks-mobile/docs/guides/` and should be moved here:
-
-- [ ] `architecture/LittleTalksIntelligentJourneySystemTechnicalGuide.md` → `journey-system.md`
-- [ ] `development/ComprehensiveAnalyticsEventTrackingSystem.md` → `analytics-events.md`
-- [ ] `api/RevenueCatEntitlementFlow.md` → `revenuecat-integration.md`
-- [ ] `api/APIEndpointsEntitlementFlow.md` → `api-contracts.md`
-- [ ] `reference/BusinessModelMonetization.md` → Move to Confluence (business doc)
+| Document | Description | Used By |
+|----------|-------------|---------|
+| `journey-system.md` | Intelligent journey system architecture, database schema, backend/frontend implementation | mobile, admin |
+| `analytics-events.md` | Comprehensive analytics event tracking system | mobile, admin |
+| `revenuecat-integration.md` | RevenueCat entitlement flow and subscription handling | mobile, admin, api |
+| `api-contracts.md` | API endpoints and entitlement flow | mobile, admin, api |
+| `session-handoff-template.md` | Template for session continuity handoffs | all projects |
 
 ## Usage
 
 Project CLAUDE.md files reference these docs. Claude reads them on-demand when working on related features.
+
+## Migration Notes
+
+These documents were migrated from `littletalks-mobile/docs/guides/` on 2025-12-17. Pointer files remain in the original locations for backward compatibility.
