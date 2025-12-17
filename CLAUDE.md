@@ -67,3 +67,15 @@ Create in each project's `docs/session_handoffs/` directory when:
 - Approaching token/context limits
 - At natural stopping points
 - Before switching to different tasks
+
+## Security: Protect docs/ Folders
+
+For PHP projects deployed to web servers, add `.htaccess` to `docs/` to prevent web access:
+
+```apache
+# Deny all web access to this directory
+Require all denied
+```
+
+**Applies to**: littletalks-admin, football, WXING (PHP on Plesk/Apache)
+**Does NOT apply to**: littletalks-mobile (React Native), littletalks-api (Node.js), lp_test (GitHub Actions)
