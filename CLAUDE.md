@@ -18,7 +18,7 @@ This is the central documentation hub for the LittleTalks ecosystem (Kobumura or
 | Project | Jira | Path (Lenovo) | Purpose |
 |---------|------|---------------|---------|
 | WXING | CD | `C:\Users\dorot\PhpstormProjects\WXING` | JiraService, notification system, audit logging |
-| football | TBD | `C:\Users\dorot\PhpstormProjects\football` | Football pool greenfield rewrite |
+| football | FOOT | `C:\Users\dorot\PhpstormProjects\football` | Football pool greenfield rewrite |
 | football-pool-legacy | - | `C:\Users\dorot\PhpstormProjects\football-pool-legacy` | Reference archive (2011-2020 code) |
 
 ## Jira Integration
