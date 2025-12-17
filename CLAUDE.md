@@ -13,11 +13,13 @@ This is the central documentation hub for the LittleTalks ecosystem (Kobumura or
 | littletalks-api | LTD | `C:\Users\dorot\StudioProjects\littletalks-api` | Node.js/Express backend |
 | lp_test (LittlePipes) | LP | `C:\Users\dorot\AndroidStudioProjects\lp_test` | CI/CD platform |
 
-## Reference Project (Personal, not Kobumura)
+## Personal Projects (not Kobumura, but use shared standards)
 
-| Project | Jira | Path (Lenovo) | Useful For |
-|---------|------|---------------|------------|
+| Project | Jira | Path (Lenovo) | Purpose |
+|---------|------|---------------|---------|
 | WXING | CD | `C:\Users\dorot\PhpstormProjects\WXING` | JiraService, notification system, audit logging |
+| football | TBD | `C:\Users\dorot\PhpstormProjects\football` | Football pool greenfield rewrite |
+| football-pool-legacy | - | `C:\Users\dorot\PhpstormProjects\football-pool-legacy` | Reference archive (2011-2020 code) |
 
 ## Jira Integration
 
