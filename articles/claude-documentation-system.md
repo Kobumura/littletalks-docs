@@ -6,7 +6,16 @@
 
 ## The Problem
 
-Working with Claude Code across multiple projects, we kept hitting the same issues:
+LittleTalks is built across **multiple projects in different languages**:
+
+| Project | Language | Purpose |
+|---------|----------|---------|
+| littletalks-mobile | React Native | iOS & Android app |
+| littletalks-api | Node.js/Express | Backend API |
+| littletalks-admin | PHP | Admin dashboard |
+| lp_test (LittlePipes) | GitHub Actions | CI/CD platform |
+
+These projects share business logic, integrations (RevenueCat, Twilio, analytics), standards, and data contracts. Working with Claude Code across them, we kept hitting the same issues:
 
 1. **Context switching pain** - Starting a new session meant re-explaining project structure, conventions, and history
 2. **Scattered documentation** - Important info spread across READMEs, code comments, and tribal knowledge
