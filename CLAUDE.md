@@ -2,6 +2,8 @@
 
 This is the central documentation hub for the LittleTalks ecosystem (Kobumura org).
 
+> **How this all works**: See `DOCUMENTATION-ARCHITECTURE.md` for the full explanation of the three-tier documentation system and maintenance guidelines.
+
 ## Kobumura Projects
 
 | Project | Jira | Path (Lenovo) | Description |
@@ -51,6 +53,7 @@ Use `;filename=` to rename files to descriptive names during upload.
 |------|----------|-------------|
 | Business docs | Confluence | Marketing, high-level strategy |
 | Shared technical | `shared/` in this repo | Cross-project guides (journey, analytics, RevenueCat) |
+| CI/CD platform | `littlepipes/` in this repo | Build system docs (private - lp_test is public!) |
 | Project-specific | Each repo's CLAUDE.md | Tech stack, file structure, dev commands |
 | Session history | Each repo's `docs/session_handoffs/` | Continuity between sessions |
 
