@@ -119,6 +119,44 @@
 | lp_test | LP | **PUBLIC** | CI/CD workflows only - no sensitive docs! |
 | WXING | CD | Personal | Reference patterns (JiraService, notifications) |
 
+## Legacy/Rewrite Project Prep Checklist
+
+When preparing a legacy codebase for a greenfield rewrite, complete this checklist to help Claude sessions be productive immediately:
+
+### CLAUDE.md (Required)
+- [ ] Reference to Mother CLAUDE for shared standards
+- [ ] Project overview and purpose
+- [ ] Tech stack (old and new)
+- [ ] Path to legacy repo for reference
+- [ ] Jira project code
+- [ ] Dev/production URLs
+
+### EVOLUTION.md (Highly Recommended)
+Use the template in `football-pool-legacy/EVOLUTION.md` as a guide:
+- [ ] **Data volumes** - Users, records, database size (helps with migration planning)
+- [ ] **Feature history** - When/why features were added
+- [ ] **User pain points** - What did users complain about?
+- [ ] **Admin pain points** - What was tedious to manage?
+- [ ] **Known bugs/workarounds** - Manual fixes that were needed
+- [ ] **Key design decisions** - Why things were built certain ways
+- [ ] **Old UI screenshots** - Calibrate UX expectations
+
+### Legacy Repo Structure
+- [ ] Clean separation of archive vs. active code
+- [ ] SQL dumps available (empty schema + full data)
+- [ ] Scripts/cron jobs documented
+- [ ] Business logic locations noted in CLAUDE.md
+
+### Pre-Research (Saves Claude Time)
+- [ ] External API documentation (e.g., score feeds, payment APIs)
+- [ ] Integration requirements (what services to connect)
+- [ ] Authentication/security requirements
+
+### Result
+A well-prepped legacy project lets Claude be **productive immediately** instead of spending time discovering context. Target: Claude gives 8+/10 rating on first session.
+
+---
+
 ## For Future Claudes
 
 When starting a new session:
