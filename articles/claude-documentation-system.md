@@ -1,6 +1,8 @@
 # How We Built a Documentation System That Makes Claude Productive Immediately
 
-> **TL;DR**: We created a three-tier documentation architecture that lets new Claude sessions be productive within minutes, not hours. First real-world test: 8/10 rating from Claude on first try.
+> **TL;DR**: A three-tier documentation system that reduces LLM onboarding from hours to minutes across multi-repo, multi-language projects. First real-world test: Claude went from cold start to planning mode in under 5 minutes.
+
+*While this was built for Claude Code, the architecture applies to any LLM with limited persistent memory—GPT-4, Cursor, Copilot, or whatever comes next.*
 
 ---
 
@@ -146,7 +148,7 @@ First Claude session on the football project:
 >
 > The setup was genuinely helpful. CLAUDE.md gave immediate context. Legacy repo access was critical. The empty EVOLUTION.md and lack of "lessons learned" notes were the main gaps.
 
-**Productive immediately** - Claude went into planning mode after just a few questions.
+An 8/10 on first contact, with clear, actionable gaps—exactly the feedback loop we wanted. Claude went from cold start to planning mode in under 5 minutes, proposing database schema and asking clarifying questions about scoring rules. Zero time spent explaining Jira workflows, commit conventions, or project structure.
 
 ---
 
