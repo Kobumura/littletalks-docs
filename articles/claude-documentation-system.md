@@ -26,6 +26,10 @@ These projects share business logic, integrations (RevenueCat, Twilio, analytics
 
 **The goal**: Get Claude productive immediately, whether it's a fresh session or a completely new project.
 
+**Before**: First session spent explaining Jira setup, repo layout, commit conventions, and why certain patterns look duplicated across projects.
+
+**After**: First session critiqued the documentation system itself and moved directly into planning.
+
 ---
 
 ## The Solution: Three-Tier Documentation Architecture
@@ -120,6 +124,20 @@ The `DOCUMENTATION-ARCHITECTURE.md` file explains the entire system. New Claudes
 
 ---
 
+## Known Failure Modes
+
+This system breaks down if:
+
+- **Project CLAUDE.md files grow beyond ~100 lines** - Context cost defeats the purpose
+- **Deep docs are loaded eagerly instead of on demand** - Session bloat, slower responses
+- **Shared standards are duplicated instead of referenced** - Drift returns
+- **EVOLUTION.md exists but is left empty** - Templates without content don't help
+- **No one asks Claude to critique the system** - Feedback loops die
+
+The architecture is intentionally simple. Most failures come from violating the core principle: **lean at load, deep on demand**.
+
+---
+
 ## The Legacy Project Challenge
 
 Our biggest test: preparing a 2011-2020 football pool codebase for a greenfield rewrite.
@@ -128,12 +146,20 @@ Our biggest test: preparing a 2011-2020 football pool codebase for a greenfield 
 
 **football-pool-legacy/** (reference archive):
 - `CLAUDE.md` - Business logic locations, DO NOT MODIFY warning
-- `EVOLUTION.md` - Historical context template with sections for:
-  - Data volumes
-  - Feature history & lessons learned
-  - User/admin pain points
-  - Known bugs & workarounds
-  - Old UI screenshots
+- `EVOLUTION.md` - Historical context (essential for legacy projects):
+
+```
+EVOLUTION.md
+├── Data volumes (~users, ~records, ~DB size)
+├── Why features were built this way
+├── What users complained about
+├── What admins found tedious
+├── Bugs that required manual fixes
+├── Workarounds still in place
+└── What not to repeat
+```
+
+> **For legacy systems, EVOLUTION.md is more important than CLAUDE.md.** Without it, Claude can understand *what* exists but not *why* it exists.
 
 **football/** (greenfield):
 - `CLAUDE.md` - Full requirements, phases, success criteria
@@ -231,6 +257,30 @@ Based on feedback, we created a checklist for preparing legacy codebases:
 
 ---
 
+## Why Not Just...?
+
+**Why not just use README.md?**
+READMEs are for humans browsing repos. CLAUDE.md is specifically structured for LLM context windows—lean, actionable, with clear references.
+
+**Why not load everything into context at session start?**
+Context windows are finite and expensive. Loading a 1,251-line journey system doc when you're fixing a CSS bug wastes tokens and slows responses.
+
+**Why not rely on ChatGPT/Claude memory features?**
+Memory features are session-specific and degrade over time. This system persists across sessions, machines, and even different AI tools.
+
+**Why not just use wikis/Confluence for everything?**
+Wikis are great for business docs. But technical docs that Claude reads frequently belong in git—version-controlled, close to code, and loadable without web fetching.
+
+---
+
+## The Core Insight
+
+**LLMs don't need more prompts—they need better institutional memory.**
+
+The system we built isn't about clever prompting. It's about treating documentation as infrastructure that survives beyond any single session, any single project, and any single AI tool.
+
+---
+
 ## Appendix: Our Project Ecosystem
 
 ```
@@ -251,4 +301,6 @@ All projects reference the same Mother CLAUDE for consistency, while maintaining
 
 ---
 
-*This article documents a system built collaboratively between Dorothy and Claude Code over the course of a single session. The 8/10 rating from a fresh Claude session validated the approach - there's always room for improvement, but "productive immediately" was achieved.*
+*This system was built collaboratively between a human engineer and an AI collaborator—and designed so the collaboration survives beyond any single session. The 8/10 rating from a fresh Claude session validated the approach. The gaps it identified became immediate improvements. That's the feedback loop working as intended.*
+
+*The architecture is open. The patterns are portable. The goal is simple: stop re-explaining, start building.*
