@@ -11,6 +11,7 @@ Cross-project guides that apply to multiple LittleTalks repositories.
 | `revenuecat-integration.md` | RevenueCat entitlement flow and subscription handling | mobile, admin, api |
 | `api-contracts.md` | API endpoints and entitlement flow | mobile, admin, api |
 | `session-handoff-template.md` | Template for session continuity handoffs | all projects |
+| `php-migrations.md` | SQL migration system for PHP projects with Plesk/GitHub Actions | admin, WXING, football |
 
 ## Usage
 
