@@ -2,6 +2,8 @@
 
 > **TL;DR**: A three-tier documentation system that reduces LLM onboarding from hours to minutes across multi-repo, multi-language projects. First real-world test: Claude went from cold start to planning mode in under 5 minutes.
 
+*Who this is for: Teams working across multiple repos or languages who want LLMs to be productive immediately without repeated onboarding or fragile session memory.*
+
 *While this was built for Claude Code, the architecture applies to any LLM with limited persistent memory—GPT-4, Cursor, Copilot, or whatever comes next.*
 
 ---
