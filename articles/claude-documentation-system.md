@@ -150,6 +150,23 @@ First Claude session on the football project:
 
 An 8/10 on first contact, with clear, actionable gaps—exactly the feedback loop we wanted. Claude went from cold start to planning mode in under 5 minutes, proposing database schema and asking clarifying questions about scoring rules. Zero time spent explaining Jira workflows, commit conventions, or project structure.
 
+### First-Session Feedback Loop (Proof of Self-Documentation)
+
+The very first question asked in the greenfield project was not about features or architecture, but about the documentation system itself:
+
+> **Before we start—do you feel like the prep that Mother CLAUDE and the Claude that created your prep docs did a good job? Any suggestions for improvement?**
+
+This was intentional. Because Mother CLAUDE is self-documenting—including instructions for setting up new projects and maintaining existing ones—the goal was to validate whether a *fresh Claude session* could:
+- Understand the system without human explanation
+- Critique its effectiveness
+- Identify gaps worth addressing
+
+Because Mother CLAUDE documents not just project standards but how the documentation system itself works, this question functioned as a real-world test of whether the architecture truly explained itself.
+
+Claude's response (8/10) directly informed the improvements that followed, particularly around EVOLUTION.md content and historical context. The gaps identified became immediate action items, not theoretical improvements.
+
+> **Design Principle**: Every new project should begin by asking Claude to critique the documentation system itself. If Claude cannot evaluate or improve the prep, the system is incomplete.
+
 ---
 
 ## The Legacy Project Prep Checklist
