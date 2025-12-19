@@ -12,6 +12,7 @@ Cross-project guides that apply to multiple LittleTalks repositories.
 | `api-contracts.md` | API endpoints and entitlement flow | mobile, admin, api |
 | `session-handoff-template.md` | Template for session continuity handoffs | all projects |
 | `php-migrations.md` | SQL migration system for PHP projects with Plesk/GitHub Actions | admin, WXING, football |
+| `deploy-workflow-template.yml` | GitHub Actions deploy workflow template for PHP/Plesk projects | admin, WXING, football |
 
 ## Usage
 

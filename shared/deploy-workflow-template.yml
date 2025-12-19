@@ -1,0 +1,73 @@
+# PHP Deploy Workflow Template
+# Copy to: .github/workflows/deploy.yml
+#
+# Required GitHub Secrets:
+#   - SSH_HOST: Server IP or hostname
+#   - SSH_USER: SSH username
+#   - SSH_KEY: Private SSH key
+#   - GH_PAT: GitHub Personal Access Token (for private repos)
+#
+# Before first deploy:
+#   1. SSH to server and initialize git in deploy path (with PAT in URL for private repos)
+#   2. Do initial git fetch/reset to verify it works
+#   3. Set correct ownership for web server user
+#   4. Create .env file on server with production values (owned by web user!)
+#   5. Verify Composer is installed on server
+#
+# Customize (search for YOUR_):
+#   - YOUR_DEPLOY_PATH: Full path to your project on server
+#   - YOUR_ORG/YOUR_REPO: Your GitHub org and repo name
+#   - YOUR_WEB_USER / YOUR_WEB_GROUP: Your web server's user and group
+#   - YOUR_PHP_PATH: Path to PHP binary
+#   - YOUR_SITE_URL: Your site URL in the success message
+
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            set -e  # Exit on any error
+
+            # === CUSTOMIZE THESE VALUES ===
+            DEPLOY_PATH="YOUR_DEPLOY_PATH"
+            WEB_USER="YOUR_WEB_USER"
+            WEB_GROUP="YOUR_WEB_GROUP"
+            PHP_PATH="YOUR_PHP_PATH"
+            # ==============================
+
+            echo "=== Pulling latest code ==="
+            sudo chown -R $WEB_USER:$WEB_GROUP $DEPLOY_PATH/.git
+            sudo -u $WEB_USER bash -c 'cd '"$DEPLOY_PATH"' && git config --global --add safe.directory '"$DEPLOY_PATH"' && git fetch https://${{ secrets.GH_PAT }}@github.com/YOUR_ORG/YOUR_REPO.git main && git reset --hard FETCH_HEAD'
+
+            echo "=== Installing Composer dependencies ==="
+            COMPOSER_PATH=$(which composer || echo "/usr/local/bin/composer")
+            sudo -u $WEB_USER bash -c "cd $DEPLOY_PATH && $PHP_PATH $COMPOSER_PATH install --no-dev --optimize-autoloader"
+
+            echo "=== Running database migrations ==="
+            sudo -u $WEB_USER bash -c "cd $DEPLOY_PATH && $PHP_PATH scripts/migrations/run_migrations.php"
+
+            echo "=== Deployed at $(date) ==="
+
+      - name: Deployment complete
+        run: |
+          echo "Deployment successful!"
+          echo "Site: YOUR_SITE_URL"

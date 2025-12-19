@@ -338,4 +338,73 @@ sudo chown -R username:psacln /path/to/project/.git
 
 ---
 
+## New PHP Project Setup Checklist
+
+When setting up migrations and auto-deploy for a new PHP project:
+
+### Local Setup
+- [ ] Create `composer.json` with PSR-4 autoloading:
+  ```json
+  {
+    "autoload": {
+      "psr-4": {
+        "App\\": "src/"
+      }
+    }
+  }
+  ```
+- [ ] Run `composer install` to generate `vendor/autoload.php`
+- [ ] Ensure config loads Composer autoloader: `require_once 'vendor/autoload.php';`
+- [ ] Create `scripts/migrations/` directory
+- [ ] Copy `run_migrations.php` from template (adapt namespace/config path)
+- [ ] Create initial migration file (e.g., `001_create_schema.sql`)
+- [ ] Test migration runs locally: `php scripts/migrations/run_migrations.php`
+
+### GitHub Actions Setup
+- [ ] Create `.github/workflows/` directory
+- [ ] Copy `deploy-workflow-template.yml` to `deploy.yml`
+- [ ] Customize `DEPLOY_PATH` in the workflow
+- [ ] Customize GitHub repo URL in the workflow
+- [ ] Update success message with correct site URL
+
+### GitHub Secrets (Repository Settings → Secrets)
+- [ ] Server host, SSH user, SSH key (names vary by setup)
+- [ ] `GH_PAT` - GitHub Personal Access Token (for private repos)
+
+### Server Setup (SSH)
+- [ ] Create site/subdomain in hosting panel (if needed)
+- [ ] Initialize git in deploy path:
+  ```bash
+  cd /path/to/your/deploy/directory
+  git init
+  # For PRIVATE repos - include PAT in URL for auto-deploy to work:
+  git remote add origin https://YOUR_GH_PAT@github.com/YOUR_ORG/YOUR_REPO.git
+  # For public repos:
+  # git remote add origin https://github.com/YOUR_ORG/YOUR_REPO.git
+  ```
+- [ ] Do initial fetch to verify it works:
+  ```bash
+  git fetch origin main
+  git reset --hard FETCH_HEAD
+  ```
+- [ ] Set correct ownership for your web server user:
+  ```bash
+  sudo chown -R YOUR_WEB_USER:YOUR_WEB_GROUP .
+  ```
+- [ ] Create `.env` file with production values
+- [ ] Create database (if needed)
+- [ ] Verify PHP path: `which php` or find your hosting's PHP binary
+- [ ] Verify Composer is installed: `which composer` or install it
+
+### First Deploy
+- [ ] Push to main branch
+- [ ] Check GitHub Actions for successful run
+- [ ] Verify site loads at your URL
+- [ ] Check `_migrations` table has your migrations recorded
+
+### Template Location
+- **Deploy workflow template**: `littletalks-docs/shared/deploy-workflow-template.yml`
+
+---
+
 *This pattern is intentionally simple. For complex projects, consider a proper migration framework like Doctrine Migrations or Phinx.*
