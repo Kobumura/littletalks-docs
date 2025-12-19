@@ -2,7 +2,8 @@
 
 > **Used by**: littletalks-admin, WXING, football
 >
-> A simple, file-based SQL migration system for PHP projects deployed via GitHub Actions to Plesk.
+> A simple, file-based migration system for PHP projects deployed via GitHub Actions to Plesk.
+> Supports both **SQL** (`.sql`) and **PHP** (`.php`) migrations.
 
 ## Overview
 
@@ -30,19 +31,56 @@ your-project/
 ## File Naming Convention
 
 ```
-NNN_description.sql
+NNN_description.sql    # SQL migration
+NNN_description.php    # PHP migration (for complex data operations)
 ```
 
 - **NNN**: Three-digit number (001, 002, 003...)
 - **description**: Snake_case description of what it does
 - Files are sorted alphabetically, so numbering ensures order
+- **SQL files**: Standard SQL statements
+- **PHP files**: For complex operations like data backfills, calculations, API calls
 
 **Examples:**
 ```
 001_create_messaging_prices_table.sql
 002_create_users_table.sql
 003_add_dashboard_preferences.sql
+004_backfill_historical_data.php      # PHP migration for data processing
 ```
+
+## PHP Migrations
+
+Use PHP migrations when you need to:
+- Backfill data with complex calculations
+- Call external APIs during migration
+- Perform operations that can't be expressed in SQL
+
+**PHP Migration Format:**
+```php
+<?php
+/**
+ * Migration: 004_backfill_historical_data
+ * Description: Calculates and stores historical results
+ */
+
+// Database connection is already available from run_migrations.php
+// Use App\Config\Database or the $db variable if in scope
+
+use App\Config\Database;
+
+echo "Backfilling historical data...\n";
+
+// Your migration logic here
+$results = Database::query("SELECT * FROM some_table");
+foreach ($results as $row) {
+    // Process data...
+}
+
+echo "  ✓ Backfill complete\n";
+```
+
+The migration runner will `require` the PHP file, so it runs in the same context with database connection available.
 
 ## Migration File Format
 

@@ -59,6 +59,18 @@ Use `;filename=` to rename files to descriptive names during upload.
 | Project-specific | Each repo's CLAUDE.md | Tech stack, file structure, dev commands |
 | Session history | Each repo's `docs/session_handoffs/` | Continuity between sessions |
 
+## Key Shared Technical Docs
+
+**IMPORTANT**: Read these docs when working on relevant projects!
+
+| Doc | Projects | Content |
+|-----|----------|---------|
+| `shared/php-migrations.md` | littletalks-admin, WXING, football | **Database migrations** - how to create SQL and PHP migrations, auto-deploy integration |
+| `shared/journey-system.md` | littletalks-mobile, littletalks-api | User journey/onboarding system |
+| `shared/analytics-events.md` | littletalks-mobile, littletalks-api | Analytics event taxonomy |
+| `shared/revenuecat-integration.md` | littletalks-mobile | Subscription/paywall setup |
+| `shared/api-contracts.md` | littletalks-mobile, littletalks-api | API endpoint specifications |
+
 ## Session Handoffs
 
 Template: `shared/session-handoff-template.md`
