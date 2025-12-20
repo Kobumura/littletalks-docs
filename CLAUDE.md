@@ -25,16 +25,76 @@ This is the central documentation hub for the LittleTalks ecosystem (Kobumura or
 
 - **Instance**: `kobumura.atlassian.net`
 - **Auth**: Basic auth with email + API token
+- **Credentials**: Stored in environment variables (never commit to git!)
+
+### Credential Setup
+
+Add to your shell profile (`~/.bashrc`, PowerShell `$PROFILE`, etc.):
+
+```bash
+# Jira API credentials (kobumura.atlassian.net)
+export JIRA_EMAIL="dorothyjbt+claude@gmail.com"
+export JIRA_TOKEN="your-api-token-here"
+```
+
+On Windows PowerShell, add to your `$PROFILE`:
+```powershell
+$env:JIRA_EMAIL = "dorothyjbt+claude@gmail.com"
+$env:JIRA_TOKEN = "your-api-token-here"
+```
+
+### Creating Tickets
+
+```bash
+# Create a ticket (replace PROJECT with: LTD, LP, CD, or FOOT)
+curl -s -X POST \
+  -u "$JIRA_EMAIL:$JIRA_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "fields": {
+      "project": {"key": "PROJECT"},
+      "summary": "Ticket title here",
+      "description": {
+        "type": "doc",
+        "version": 1,
+        "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Description here"}]}]
+      },
+      "issuetype": {"name": "Task"}
+    }
+  }' \
+  "https://kobumura.atlassian.net/rest/api/3/issue"
+```
+
+**Issue types**: `Task`, `Bug`, `Story`, `Epic`
+
+**Response** includes `key` (e.g., "FOOT-42") and `id` for the created ticket.
 
 ### Attaching Files to Tickets
+
 ```bash
 curl -s -X POST \
-  -u "email:api_token" \
+  -u "$JIRA_EMAIL:$JIRA_TOKEN" \
   -H "X-Atlassian-Token: no-check" \
   -F "file=@/path/to/file.png;filename=descriptive_name.png" \
   "https://kobumura.atlassian.net/rest/api/3/issue/XXX-123/attachments"
 ```
 Use `;filename=` to rename files to descriptive names during upload.
+
+### Adding Comments
+
+```bash
+curl -s -X POST \
+  -u "$JIRA_EMAIL:$JIRA_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "body": {
+      "type": "doc",
+      "version": 1,
+      "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Comment text here"}]}]
+    }
+  }' \
+  "https://kobumura.atlassian.net/rest/api/3/issue/XXX-123/comment"
+```
 
 ## User Context (Dorothy)
 
