@@ -125,6 +125,7 @@ curl -s -X POST \
 
 | Doc | Projects | Content |
 |-----|----------|---------|
+| `shared/php-data-access.md` | littletalks-admin, WXING, football | **Data access layer** - dynamic SQL builders for audit-safe persistence, repository pattern |
 | `shared/php-migrations.md` | littletalks-admin, WXING, football | **Database migrations** - how to create SQL and PHP migrations, auto-deploy integration |
 | `shared/journey-system.md` | littletalks-mobile, littletalks-api | User journey/onboarding system |
 | `shared/analytics-events.md` | littletalks-mobile, littletalks-api | Analytics event taxonomy |
