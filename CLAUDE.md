@@ -103,7 +103,21 @@ curl -s -X POST \
 - **MacBook**: `~/Desktop/`
 
 ### Commit & PR Guidelines
-- Do NOT include "Generated with Claude Code", "Co-Authored-By: Claude", or any AI attribution
+
+**NO CLAUDE ATTRIBUTION - ANYWHERE!**
+
+Do NOT include any of the following in commits, PRs, code comments, or any other output:
+- "Generated with Claude Code"
+- "Co-Authored-By: Claude"
+- "🤖 Generated with [Claude Code](https://claude.com/claude-code)"
+- Any variation of AI/Claude attribution or credit
+
+This applies to:
+- Git commit messages
+- Pull request titles and descriptions
+- Code comments
+- Documentation
+- Jira tickets and comments
 
 ### Platform Detection
 - `win32` + `dorot` in path = Lenovo (Primary PC)
