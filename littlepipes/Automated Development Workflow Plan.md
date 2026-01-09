@@ -230,7 +230,7 @@ jobs:
           curl -X POST \
             -H "Authorization: token ${{ secrets.LITTLEPIPES_DISPATCH_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/Kobumura/lp_test/dispatches \
+            https://api.github.com/repos/Kobumura/littlepipes/dispatches \
             -d '{
               "event_type": "internal-build",
               "client_payload": {
@@ -251,7 +251,7 @@ jobs:
 ### Component 2: Jira Webhook Receiver (GitHub Action)
 
 **File**: `.github/workflows/jira-approval-handler.yml`
-**Location**: `lp_test` (public repo) or serverless function
+**Location**: `littlepipes` (public repo) or serverless function
 
 ```yaml
 name: Jira Approval Handler
@@ -300,7 +300,7 @@ jobs:
         run: |
           curl -X POST \
             -H "Authorization: token ${{ secrets.LITTLEPIPES_DISPATCH_TOKEN }}" \
-            https://api.github.com/repos/Kobumura/lp_test/dispatches \
+            https://api.github.com/repos/Kobumura/littlepipes/dispatches \
             -d '{
               "event_type": "production-build",
               "client_payload": {
@@ -340,10 +340,10 @@ jobs:
 ### In `littletalks-mobile` (private repo)
 - `JIRA_API_TOKEN` - For updating Jira tickets
 - `JIRA_EMAIL` - Jira account email
-- `LITTLEPIPES_DISPATCH_TOKEN` - PAT for triggering lp_test workflows
+- `LITTLEPIPES_DISPATCH_TOKEN` - PAT for triggering littlepipes workflows
 - `SLACK_WEBHOOK_URL` - For notifications (optional)
 
-### In `lp_test` (public repo)
+### In `littlepipes` (public repo)
 - Already has build secrets
 - Needs: `JIRA_API_TOKEN`, `JIRA_EMAIL` for status updates
 - Needs: `CI_ACCESS_TOKEN` for PR operations on littletalks-mobile

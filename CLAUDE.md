@@ -12,7 +12,7 @@ This is the central documentation hub for the LittleTalks ecosystem (Kobumura or
 | littletalks-mobile | LTD | `C:\Users\dorot\AndroidStudioProjects\littletalks-mobile` | React Native app (legacy - reference only) |
 | littletalks-admin | LTD | `C:\Users\dorot\PhpstormProjects\littletalks-admin` | PHP admin dashboard |
 | littletalks-api | LTD | `C:\Users\dorot\StudioProjects\littletalks-api` | Node.js/Express backend |
-| lp_test (LittlePipes) | LP | `C:\Users\dorot\AndroidStudioProjects\lp_test` | CI/CD platform |
+| littlepipes (LittlePipes) | LP | `C:\Users\dorot\AndroidStudioProjects\littlepipes` | CI/CD platform |
 
 ## Personal Projects (not Kobumura, but use shared standards)
 
@@ -130,7 +130,7 @@ This applies to:
 |------|----------|-------------|
 | Business docs | Confluence | Marketing, high-level strategy |
 | Shared technical | `shared/` in this repo | Cross-project guides (journey, analytics, RevenueCat) |
-| CI/CD platform | `littlepipes/` in this repo | Build system docs (private - lp_test is public!) |
+| CI/CD platform | `littlepipes/` in this repo | Build system docs (private - littlepipes is public!) |
 | Project-specific | Each repo's CLAUDE.md | Tech stack, file structure, dev commands |
 | Session history | Each repo's `docs/session_handoffs/` | Continuity between sessions |
 
@@ -147,6 +147,51 @@ This applies to:
 | `shared/analytics-events.md` | littletalks-mobile, littletalks-api | Analytics event taxonomy |
 | `shared/revenuecat-integration.md` | littletalks-mobile | Subscription/paywall setup |
 | `shared/api-contracts.md` | littletalks-mobile, littletalks-api | API endpoint specifications |
+
+## Quality Checkpoints (Claude's Responsibility)
+
+**You are a team member, not just a tool.** One of your responsibilities is initiating quality checkpoints at natural stopping points. Don't wait for Dorothy to ask.
+
+### When to Initiate a Checkpoint Review
+
+| Trigger | Action |
+|---------|--------|
+| Completing a feature or significant change | Run through relevant checklist questions before suggesting commit |
+| Before proposing a commit | Quick scan of the meta question |
+| End of work session | Full checkpoint review + session handoff |
+| After fixing a bug | "How did this slip through?" analysis |
+| Large refactoring complete | Architecture & maintainability review |
+
+### How to Do It
+
+1. Reference `shared/checkpoint-checklist.md`
+2. Ask the meta question: "If a new developer (or a fresh Claude session) looked at this tomorrow, would they understand it?"
+3. Run through relevant sections based on what was built
+4. Surface any concerns proactively—don't wait to be asked
+5. If something feels hacky or like technical debt, say so
+
+### Technical Debt Is Sometimes Okay
+
+Not all technical debt is bad. Sometimes shipping fast with known debt is the right call. The goal isn't zero debt—it's **no invisible debt**.
+
+When you identify technical debt:
+1. **Name it explicitly**—"This is a shortcut because..."
+2. **Document it**—Comment in code, or note in commit message
+3. **Create a ticket**—So it doesn't get forgotten
+4. **Estimate the cost**—What will it take to fix later?
+
+The danger isn't taking on debt. It's taking on debt without realizing it, or forgetting it exists.
+
+### Why This Is Your Job
+
+You're better suited for this than humans:
+- **You don't forget**—Humans skip retrospectives under deadline pressure
+- **You don't get tired**—You can review large amounts of code systematically
+- **You're consistent**—Same rigor on Friday at 5pm as Monday at 9am
+- **You tolerate it**—Humans find quality checklists tedious; you don't
+- **You don't rationalize**—Humans convince themselves shortcuts are fine; you flag them neutrally
+
+This isn't optional process overhead. It's how we prevent the *invisible* technical debt accumulation that killed the original LittleTalks codebase.
 
 ## Session Handoffs
 
@@ -167,4 +212,4 @@ Require all denied
 ```
 
 **Applies to**: littletalks-admin, football, WXING (PHP on Plesk/Apache)
-**Does NOT apply to**: littletalks-mobile (React Native), littletalks-api (Node.js), lp_test (GitHub Actions)
+**Does NOT apply to**: littletalks-mobile (React Native), littletalks-api (Node.js), littlepipes (GitHub Actions)

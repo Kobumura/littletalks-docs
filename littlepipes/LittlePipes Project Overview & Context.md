@@ -35,7 +35,7 @@ Private Repo (littletalks-mobile):
 ├── .github/actions/setup-environment/       # DRY composite action
 └── All proprietary code + secrets
 
-Public Repo (lp_test):  
+Public Repo (littlepipes):  
 └── .github/workflows/build-on-dispatch.yaml # Unlimited minutes execution
 ```
 
@@ -114,7 +114,7 @@ Public Repo (lp_test):
 - **Jira LP Project**: [LP Project Board](https://kobumura.atlassian.net/browse/LP)
 - **Jira LTD Project**: [LTD Project Board](https://kobumura.atlassian.net/browse/LTD)
 - **GitHub Private Repo**: `Kobumura/littletalks-mobile` (proprietary)
-- **GitHub Public Repo**: `Kobumura/lp_test` (LittlePipes execution)
+- **GitHub Public Repo**: `Kobumura/littlepipes` (LittlePipes execution)
 
 ### **Business Documentation**
 - **Confluence**: LittlePipes documentation and session handoffs

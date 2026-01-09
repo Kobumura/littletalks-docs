@@ -23,7 +23,7 @@ LittleTalks is built across **multiple projects in different languages**:
 | littletalks-mobile | React Native | iOS & Android app |
 | littletalks-api | Node.js/Express | Backend API |
 | littletalks-admin | PHP | Admin dashboard |
-| lp_test (LittlePipes) | GitHub Actions | CI/CD platform |
+| littlepipes | GitHub Actions | CI/CD platform |
 
 These projects share business logic, integrations (RevenueCat, Twilio, analytics), standards, and data contracts. Working with Claude Code across them, we kept hitting the same issues:
 
@@ -304,7 +304,7 @@ Kobumura (Company Projects):
 ├── littletalks-mobile      # React Native app
 ├── littletalks-admin       # PHP admin dashboard
 ├── littletalks-api         # Node.js backend
-├── lp_test                 # CI/CD (PUBLIC repo)
+├── littlepipes             # CI/CD (PUBLIC repo)
 └── littletalks-docs        # Shared docs (Mother CLAUDE)
 
 Personal (Use shared standards):

@@ -94,7 +94,7 @@ What happens when GitHub changes Actions pricing or limits? The whole model assu
 iOS builds especially can fail for transient reasons (code signing, network, Xcode quirks). Is there auto-retry logic?
 
 ### 3. Disaster Recovery
-If lp_test repo gets deleted/corrupted, how quickly can you recover? Is there a backup of the workflow files?
+If littlepipes repo gets deleted/corrupted, how quickly can you recover? Is there a backup of the workflow files?
 
 ### 4. Secrets Rotation
 14 secrets is a lot. What's the process when one expires or needs rotation? Is there a test suite to verify secrets are valid?
@@ -135,4 +135,4 @@ The workflow automation (LP-28) is great for internal use, but should be battle-
 - [ ] Define clear Pro vs Free feature differentiation
 - [ ] Evaluate whether platform abstraction is worth the effort vs GitHub focus
 - [ ] Research enterprise compliance requirements (SOC 2, etc.)
-- [ ] Create disaster recovery runbook for lp_test repo
+- [ ] Create disaster recovery runbook for littlepipes repo

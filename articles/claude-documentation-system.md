@@ -332,3 +332,17 @@ All projects reference the same Mother CLAUDE for consistency, while maintaining
 ---
 
 *This article was written collaboratively with Claude, using the documentation system it describes.*
+
+---
+
+## Resources
+
+The Mother CLAUDE documentation system is open source:
+
+- **GitHub**: [github.com/Kobumura/littletalks-docs](https://github.com/Kobumura/littletalks-docs)
+
+Feel free to fork it, adapt it, or use it as a reference for your own implementation.
+
+---
+
+*Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Free to use and adapt with attribution to Dorothy J. Aubrey.*

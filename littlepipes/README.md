@@ -2,7 +2,7 @@
 
 CI/CD platform documentation for the LittleTalks ecosystem.
 
-> **Why here?** The `lp_test` repo is PUBLIC (for unlimited GitHub Actions minutes). These docs contain cost analysis, architecture decisions, and strategy that should remain private.
+> **Why here?** The `littlepipes` repo is PUBLIC (for unlimited GitHub Actions minutes). These docs contain cost analysis, architecture decisions, and strategy that should remain private.
 
 ## Key Documents
 
@@ -20,7 +20,7 @@ CI/CD platform documentation for the LittleTalks ecosystem.
 
 ## Related
 
-- **Workflows**: `lp_test/.github/workflows/` (public repo - just YAML, no sensitive info)
+- **Workflows**: `littlepipes/.github/workflows/` (public repo - just YAML, no sensitive info)
 - **Jira Project**: LP (LittlePipes)
 
 ## Migration Notes

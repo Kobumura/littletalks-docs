@@ -58,7 +58,7 @@
 ### LittlePipes Docs (`littletalks-docs/littlepipes/`)
 - **Loaded**: On-demand when working on CI/CD
 - **Contains**: Build system architecture, costs, workflows
-- **Why here**: lp_test repo is PUBLIC; these docs are private
+- **Why here**: littlepipes repo is PUBLIC; these docs are private
 
 ## When to Put Docs Where
 
@@ -84,7 +84,7 @@
 
 ### New CI/CD Doc
 1. Create in `littletalks-docs/littlepipes/`
-2. Do NOT put in lp_test (public repo)
+2. Do NOT put in littlepipes (public repo)
 
 ## Maintenance Rules
 
@@ -116,7 +116,7 @@
 | littletalks-mobile | LTD | Private | React Native app |
 | littletalks-admin | LTD | Private | PHP admin dashboard |
 | littletalks-api | LTD | Private | Node.js backend |
-| lp_test | LP | **PUBLIC** | CI/CD workflows only - no sensitive docs! |
+| littlepipes | LP | **PUBLIC** | CI/CD workflows only - no sensitive docs! |
 | WXING | CD | Personal | Reference patterns (JiraService, notifications) |
 
 ## Legacy/Rewrite Project Prep Checklist

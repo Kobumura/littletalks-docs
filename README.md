@@ -11,7 +11,7 @@ LittleTalks is built across **multiple projects in different languages** that sh
 | **littletalks-mobile** | React Native / JavaScript | iOS & Android mobile app |
 | **littletalks-api** | Node.js / Express | Backend API on Heroku |
 | **littletalks-admin** | PHP | Admin dashboard & analytics |
-| **lp_test (LittlePipes)** | GitHub Actions / YAML | End-to-end CI/CD platform |
+| **littlepipes** | GitHub Actions / YAML | End-to-end CI/CD platform |
 
 These projects share:
 - **Business logic** - User journeys, subscription tiers, analytics events
@@ -34,7 +34,7 @@ littletalks-docs/
 │   ├── revenuecat-integration.md      # Subscription/entitlement flow
 │   ├── api-contracts.md               # API endpoints
 │   └── session-handoff-template.md    # Template for session continuity
-├── littlepipes/                       # CI/CD platform docs (private - lp_test is public)
+├── littlepipes/                       # CI/CD platform docs (private - littlepipes repo is public)
 │   └── [build system documentation]
 └── articles/                          # Write-ups and guides
     └── claude-documentation-system.md # How we built this system
@@ -46,7 +46,7 @@ littletalks-docs/
 - [littletalks-mobile](https://github.com/Kobumura/littletalks-mobile) - React Native app
 - [littletalks-admin](https://github.com/Kobumura/littletalks-admin) - PHP admin dashboard
 - [littletalks-api](https://github.com/Kobumura/littletalks-api) - Node.js backend API
-- [lp_test](https://github.com/Kobumura/lp_test) - LittlePipes CI/CD (public repo)
+- [littlepipes](https://github.com/Kobumura/littlepipes) - LittlePipes CI/CD (public repo)
 
 ### Personal Projects (use shared standards)
 - [football](https://github.com/dorothyjb/football) - Football pool greenfield rewrite

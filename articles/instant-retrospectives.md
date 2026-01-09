@@ -39,6 +39,74 @@ We call this **preventive retrospection**—asking quality questions while chang
 
 ---
 
+## The Key Insight: Claude Initiates This
+
+Here's what makes this different from every other quality checklist article: **the developer doesn't have to remember to do it.**
+
+Traditional retrospectives fail because:
+- Humans forget under deadline pressure
+- Quality reviews feel like overhead when you're trying to ship
+- Friday at 5pm gets less rigor than Monday at 9am
+- "We'll do it next sprint" becomes permanent
+
+Our solution: **Make Claude responsible for initiating the checkpoint.**
+
+### How It Works
+
+The Mother CLAUDE documentation system includes explicit instructions telling Claude:
+- At natural stopping points, initiate a checkpoint review
+- Don't wait for the developer to ask
+- Surface concerns proactively
+- You're a team member, not just a tool
+
+This means:
+- Completing a feature? Claude asks the checkpoint questions before suggesting a commit.
+- End of session? Claude initiates the retrospective and creates the handoff.
+- Something feels like a shortcut? Claude flags it immediately.
+
+### Why AI Is Better Suited for This
+
+| Human Reality | Claude Reality |
+|---------------|----------------|
+| Forgets under pressure | Never forgets |
+| Finds checklists tedious | Doesn't experience tedium |
+| Rigor varies by time of day | Consistent always |
+| Skips steps when rushing | Follows process regardless |
+| Rationalizes shortcuts | Flags them neutrally |
+
+This isn't about replacing human judgment—it's about ensuring the quality questions actually get asked. The developer still makes the decisions. Claude just makes sure the conversation happens.
+
+### The Dynamic Shift
+
+**Before**: "Teams should do retrospectives" (aspirational, depends on discipline)
+
+**After**: "Claude prompts you at every checkpoint" (automatic, built into the workflow)
+
+The developer's job shifts from "remember to ask quality questions" to "respond to Claude's quality questions." That's a much easier cognitive load.
+
+---
+
+## Technical Debt Is Sometimes the Right Call
+
+The goal isn't zero technical debt. Sometimes shipping fast with known shortcuts is the correct decision:
+- Validating a prototype before building it "right"
+- Meeting a hard deadline with a documented workaround
+- Choosing simplicity now when requirements are uncertain
+
+**The danger isn't technical debt. It's *invisible* technical debt.**
+
+The checkpoint process ensures that when debt is taken on:
+1. It's a **conscious decision**, not an accident
+2. It gets **documented**—in code comments, commit messages, or tickets
+3. It stays **visible**—so it can be paid down later
+4. Someone **owns** it—not "we'll fix it someday"
+
+The codebase that killed our productivity wasn't full of bad decisions. It was full of forgotten decisions—shortcuts that became permanent because nobody remembered they were shortcuts.
+
+And when the answer is "yes, this is debt, and we're taking it on intentionally"—that's fine. Claude documents it, creates the ticket, and moves on. The debt is visible. That's the win.
+
+---
+
 ## The Meta Question
 
 Before diving into specifics, we start with one question that cuts through everything:
@@ -225,3 +293,18 @@ The best time to ask "should we do this differently?" is while you're still doin
 ---
 
 *This article was written collaboratively with Claude, using the instant retrospective process it describes.*
+
+---
+
+## Resources
+
+The checkpoint checklist and Mother CLAUDE system are open source:
+
+- **GitHub**: [github.com/Kobumura/littletalks-docs](https://github.com/Kobumura/littletalks-docs)
+- **Checklist**: `shared/checkpoint-checklist.md`
+
+Feel free to fork it, adapt it, or use it as a reference for your own implementation.
+
+---
+
+*Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Free to use and adapt with attribution to Dorothy J. Aubrey.*
