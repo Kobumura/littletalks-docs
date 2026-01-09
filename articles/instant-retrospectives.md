@@ -59,6 +59,8 @@ The Mother CLAUDE documentation system includes explicit instructions telling Cl
 - Surface concerns proactively
 - You're a team member, not just a tool
 
+These triggers are encoded directly in Mother CLAUDE and each project's CLAUDE.md, so initiation happens automatically at commits, PRs, and session boundaries.
+
 This means:
 - Completing a feature? Claude asks the checkpoint questions before suggesting a commit.
 - End of session? Claude initiates the retrospective and creates the handoff.
@@ -75,6 +77,8 @@ This means:
 | Rationalizes shortcuts | Flags them neutrally |
 
 This isn't about replacing human judgment—it's about ensuring the quality questions actually get asked. The developer still makes the decisions. Claude just makes sure the conversation happens.
+
+Claude does not block progress; it surfaces concerns. Humans decide whether to refactor, document debt, or proceed intentionally.
 
 ### The Dynamic Shift
 
@@ -103,7 +107,7 @@ The checkpoint process ensures that when debt is taken on:
 
 The codebase that killed our productivity wasn't full of bad decisions. It was full of forgotten decisions—shortcuts that became permanent because nobody remembered they were shortcuts.
 
-And when the answer is "yes, this is debt, and we're taking it on intentionally"—that's fine. Claude documents it, creates the ticket, and moves on. The debt is visible. That's the win.
+And when the answer is "yes, this is debt, and we're taking it on intentionally"—that's fine. Claude documents it, creates the ticket, and moves on. That ticket becomes the durable reminder that the shortcut was intentional, not forgotten. The debt is visible. That's the win.
 
 ---
 
@@ -289,6 +293,8 @@ The best time to ask "should we do this differently?" is while you're still doin
 *This approach emerged from a greenfield rebuild where we wanted to prevent the technical debt accumulation that had made the previous codebase unmaintainable. It's now part of our [Mother CLAUDE documentation system](./claude-documentation-system.md) and gets referenced at every checkpoint across all projects.*
 
 *The checklist is open. The approach is portable. The goal is simple: catch problems before they become patterns.*
+
+*This article describes how we assigned quality enforcement to an AI assistant as a first-class engineering role—not a passive tool, but an active participant in maintaining code quality.*
 
 ---
 
