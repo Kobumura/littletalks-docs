@@ -6,6 +6,8 @@
 
 *While this was built for Claude Code, the architecture applies to any LLM with limited persistent memory—GPT-4, Cursor, Copilot, or whatever comes next.*
 
+**Part 1 of the Designing AI Teammates series.** This article covers onboarding. [Part 2: Instant Retrospectives](./instant-retrospectives.md) covers assigning the AI responsibility for initiating quality conversations.
+
 ---
 
 ## The Problem

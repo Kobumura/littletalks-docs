@@ -4,6 +4,8 @@
 
 *Who this is for: Any engineering team tired of technical debt accumulating faster than they can pay it down. Works with any language, framework, or AI tool.*
 
+**Part of the [Designing AI Teammates](./claude-documentation-system.md) series.** The first article covered onboarding an AI assistant using durable documentation. This one covers the next step: assigning the AI responsibility for initiating quality conversations, so standards don't decay under human fatigue.
+
 ---
 
 ## The Problem
