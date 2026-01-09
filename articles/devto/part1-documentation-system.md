@@ -118,15 +118,32 @@ Require all denied
 
 This is documented in Mother CLAUDE so new projects know to add it.
 
-### 3. Session Handoffs
-A standardized template (`session-handoff-template.md`) ensures continuity:
-- What was accomplished
-- Current state
-- Lessons learned
-- Next steps
-- Key files modified
+### 3. Session Handoffs: Memory That Survives Session Boundaries
 
-Each project has a `docs/session_handoffs/` directory for these.
+LLM sessions are ephemeral. When a session ends—whether by token limits, time, or switching tasks—everything learned is lost. Session handoffs solve this.
+
+At the end of each work session, Claude creates a handoff document capturing:
+- **What was accomplished** - Completed tasks and decisions made
+- **Current state** - Where things stand, any running processes
+- **Lessons learned** - What worked, what didn't, mistakes to avoid
+- **Next steps** - What needs to happen next
+- **Key files modified** - Quick reference for the next session
+- **Blockers** - Unresolved problems that need attention
+
+**When to create a handoff:**
+- Approaching token/context limits (Claude will notify)
+- At natural stopping points in complex tasks
+- Before switching to significantly different work
+- End of work session
+
+**Starting a new session:**
+1. Check `docs/session_handoffs/` for the most recent handoff
+2. Read it for current state and pending tasks
+3. Continue from where the previous session ended
+
+Context is restored in seconds, not re-explained over minutes. The handoff becomes the "memory" that bridges sessions.
+
+Each project has a `docs/session_handoffs/` directory for these, with files named `YYYYMMDD-HHMM-brief-description.md` for easy chronological sorting.
 
 ### 4. Self-Documenting
 The `DOCUMENTATION-ARCHITECTURE.md` file explains the entire system. New Claudes can understand the architecture without human explanation.
