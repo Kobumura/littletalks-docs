@@ -8,7 +8,8 @@ This is the central documentation hub for the LittleTalks ecosystem (Kobumura or
 
 | Project | Jira | Path (Lenovo) | Description |
 |---------|------|---------------|-------------|
-| littletalks-mobile | LTD | `C:\Users\dorot\AndroidStudioProjects\littletalks-mobile` | React Native app |
+| **littlewalks-mobile** | LTD | `C:\Users\dorot\AndroidStudioProjects\littlewalks-mobile` | **White-label platform** (RN 0.83) - the future! |
+| littletalks-mobile | LTD | `C:\Users\dorot\AndroidStudioProjects\littletalks-mobile` | React Native app (legacy - reference only) |
 | littletalks-admin | LTD | `C:\Users\dorot\PhpstormProjects\littletalks-admin` | PHP admin dashboard |
 | littletalks-api | LTD | `C:\Users\dorot\StudioProjects\littletalks-api` | Node.js/Express backend |
 | lp_test (LittlePipes) | LP | `C:\Users\dorot\AndroidStudioProjects\lp_test` | CI/CD platform |
@@ -139,6 +140,7 @@ This applies to:
 
 | Doc | Projects | Content |
 |-----|----------|---------|
+| `shared/checkpoint-checklist.md` | **ALL PROJECTS** | **Instant Retrospective** - quality checkpoint questions for every PR/commit |
 | `shared/php-data-access.md` | littletalks-admin, WXING, football | **Data access layer** - dynamic SQL builders for audit-safe persistence, repository pattern |
 | `shared/php-migrations.md` | littletalks-admin, WXING, football | **Database migrations** - how to create SQL and PHP migrations, auto-deploy integration |
 | `shared/journey-system.md` | littletalks-mobile, littletalks-api | User journey/onboarding system |
