@@ -35,6 +35,8 @@ Instead of waiting for scheduled retrospectives, we ask quality questions at eve
 
 The key insight: **The best time to catch a problem is before it becomes a pattern.**
 
+We call this **preventive retrospection**—asking quality questions while change is still cheap, not after patterns have spread.
+
 ---
 
 ## The Meta Question
@@ -131,7 +133,7 @@ The generic checklist is a starting point. Add questions specific to your projec
 
 At the end of every work session, we ask one more question:
 
-> **"What did we build today that we might regret in 6 months?"**
+> ### "What did we build today that we might regret in 6 months?"
 
 If something comes to mind, either fix it now or create a ticket to address it. Don't let it become invisible.
 
@@ -176,6 +178,8 @@ For the new codebase, we committed to checkpoint questions from day one:
 
 **Result**: After several weeks of development, the codebase remained navigable. A fresh Claude session could understand the architecture without lengthy explanations. The patterns established early continued to hold.
 
+We've since added features without breaking established patterns, and new Claude sessions consistently require minutes—not hours—to become productive. The same metric we used to validate the documentation system now validates the quality process.
+
 ---
 
 ## Common Objections
@@ -217,3 +221,7 @@ The best time to ask "should we do this differently?" is while you're still doin
 *This approach emerged from a greenfield rebuild where we wanted to prevent the technical debt accumulation that had made the previous codebase unmaintainable. It's now part of our [Mother CLAUDE documentation system](./claude-documentation-system.md) and gets referenced at every checkpoint across all projects.*
 
 *The checklist is open. The approach is portable. The goal is simple: catch problems before they become patterns.*
+
+---
+
+*This article was written collaboratively with Claude, using the instant retrospective process it describes.*
