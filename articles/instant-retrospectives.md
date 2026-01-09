@@ -59,7 +59,7 @@ The Mother CLAUDE documentation system includes explicit instructions telling Cl
 - Surface concerns proactively
 - You're a team member, not just a tool
 
-These triggers are encoded directly in Mother CLAUDE and each project's CLAUDE.md, so initiation happens automatically at commits, PRs, and session boundaries.
+These initiation rules live in Mother CLAUDE and each project's CLAUDE.md, making them durable across sessions, tools, and developers. Initiation happens automatically at commits, PRs, and session boundaries.
 
 This means:
 - Completing a feature? Claude asks the checkpoint questions before suggesting a commit.
