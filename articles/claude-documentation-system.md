@@ -138,6 +138,8 @@ At the end of each work session, Claude creates a handoff document capturing:
 
 Context is restored in seconds, not re-explained over minutes. The handoff becomes the "memory" that bridges sessions.
 
+Over time, the handoffs also become a searchable history of the project—when decisions were made, why approaches were chosen, what problems were encountered. Grep through `session_handoffs/` and you have an archeology of the codebase.
+
 Each project has a `docs/session_handoffs/` directory for these, with files named `YYYYMMDD-HHMM-brief-description.md` for easy chronological sorting.
 
 ### 4. Self-Documenting
