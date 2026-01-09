@@ -247,6 +247,28 @@ Based on feedback, we created a checklist for preparing legacy codebases:
 
 ---
 
+## Evolution: The Checkpoint Checklist
+
+After using this system in production across multiple projects, we identified a gap: **documentation tells Claude what exists, but not how to maintain quality as it builds.**
+
+We added a **checkpoint checklist** (`shared/checkpoint-checklist.md`) that gets referenced at every PR and commit. It's built around one meta question:
+
+> **"If I had to hand this codebase to a new developer tomorrow, would they understand it without me explaining anything?"**
+
+The checklist covers:
+- Architecture & design (single responsibility, DRY, configuration vs hardcoding)
+- Code quality (no magic numbers, type safety, naming clarity)
+- Error handling & edge cases
+- Testing & reliability
+- Performance & security
+- Project-specific questions (white-label readiness, API compatibility, etc.)
+
+This emerged from a greenfield rebuild where we wanted to prevent the technical debt accumulation that plagued the original project. We call it the **"Instant Retrospective"**—quality checkpoints at every natural stopping point, not just at the end of sprints or after incidents.
+
+*For a deep dive on the philosophy and practice, see: [Instant Retrospectives: Building Quality Into the Rhythm of Development](./instant-retrospectives.md)*
+
+---
+
 ## Try It Yourself
 
 1. **Create a shared docs repo** with Mother CLAUDE
