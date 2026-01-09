@@ -247,7 +247,7 @@ Based on feedback, we created a checklist for preparing legacy codebases:
 
 ---
 
-## Evolution: The Checkpoint Checklist
+## Evolution: The Checkpoint Checklist (Instant Retrospectives)
 
 After using this system in production across multiple projects, we identified a gap: **documentation tells Claude what exists, but not how to maintain quality as it builds.**
 
@@ -263,7 +263,7 @@ The checklist covers:
 - Performance & security
 - Project-specific questions (white-label readiness, API compatibility, etc.)
 
-This emerged from a greenfield rebuild where we wanted to prevent the technical debt accumulation that plagued the original project. We call it the **"Instant Retrospective"**—quality checkpoints at every natural stopping point, not just at the end of sprints or after incidents.
+This emerged from a greenfield rebuild where we wanted to prevent the technical debt accumulation that plagued the original project. We call it the **"Instant Retrospective"**—quality checkpoints at every natural stopping point, not just at the end of sprints or after incidents. The checklist lives alongside Mother CLAUDE and is referenced whenever Claude proposes or completes non-trivial changes.
 
 *For a deep dive on the philosophy and practice, see: [Instant Retrospectives: Building Quality Into the Rhythm of Development](./instant-retrospectives.md)*
 
@@ -312,7 +312,7 @@ Kobumura (Company Projects):
 ├── littletalks-mobile      # React Native app
 ├── littletalks-admin       # PHP admin dashboard
 ├── littletalks-api         # Node.js backend
-├── lp_test                 # CI/CD (PUBLIC repo)
+├── littlepipes             # CI/CD (PUBLIC repo)
 └── littletalks-docs        # Shared docs (Mother CLAUDE)
 
 Personal (Use shared standards):
