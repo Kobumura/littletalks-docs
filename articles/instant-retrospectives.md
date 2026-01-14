@@ -4,7 +4,7 @@
 
 *Who this is for: Any engineering team tired of technical debt accumulating faster than they can pay it down. Works with any language, framework, or AI tool.*
 
-**Part of the [Designing AI Teammates](./claude-documentation-system.md) series.** The first article covered onboarding an AI assistant using durable documentation. This one covers the next step: assigning the AI responsibility for initiating quality conversations, so standards don't decay under human fatigue.
+**Part 3 of the [Designing AI Teammates](./claude-documentation-system.md) series.** Part 1 covered onboarding with Mother CLAUDE. [Part 2](./session-handoffs.md) covered session handoffs for persistent memory. This one covers the final step: assigning the AI responsibility for initiating quality conversations, so standards don't decay under human fatigue.
 
 ---
 

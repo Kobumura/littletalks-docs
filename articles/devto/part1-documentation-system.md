@@ -291,7 +291,7 @@ The checklist covers:
 
 This emerged from a greenfield rebuild where we wanted to prevent the technical debt accumulation that plagued the original project. We call it the **"Instant Retrospective"**—quality checkpoints at every natural stopping point, not just at the end of sprints or after incidents. The checklist lives alongside Mother CLAUDE and is referenced whenever Claude proposes or completes non-trivial changes.
 
-*The next article in this series covers the Instant Retrospective approach in depth—including how we made Claude responsible for initiating these checkpoints automatically.*
+*Part 2 covers Session Handoffs—how we give Claude persistent memory across sessions. Part 3 covers the Instant Retrospective approach—including how we made Claude responsible for initiating quality checkpoints automatically.*
 
 ---
 

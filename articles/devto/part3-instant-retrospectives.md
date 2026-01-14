@@ -11,7 +11,7 @@ canonical_url: https://github.com/Kobumura/littletalks-docs/blob/master/articles
 
 *Who this is for: Any engineering team tired of technical debt accumulating faster than they can pay it down. Works with any language, framework, or AI tool.*
 
-**Part 2 of the Designing AI Teammates series.** The first article covered onboarding an AI assistant using durable documentation. This one covers the next step: assigning the AI responsibility for initiating quality conversations, so standards don't decay under human fatigue.
+**Part 3 of the Designing AI Teammates series.** Part 1 covered onboarding with Mother CLAUDE. Part 2 covered session handoffs for persistent memory. This one covers the final step: assigning the AI responsibility for initiating quality conversations, so standards don't decay under human fatigue.
 
 ---
 
