@@ -132,11 +132,39 @@ Add project-specific questions here. Examples:
 
 ---
 
+## Build Verification (Before Every Commit)
+
+**CRITICAL**: Do NOT commit until you've verified the app actually runs.
+
+```bash
+# 1. Build
+cd android && ./gradlew assembleLittletalksDebug
+
+# 2. Install
+adb install -r app/build/outputs/apk/littletalks/debug/app-littletalks-debug.apk
+
+# 3. Launch and verify
+adb shell am start -n com.littletalks.app/com.littlewalksmobile.MainActivity
+# Confirm: App displays correctly (not white screen)
+```
+
+**In commit message**, include verification status:
+- `Verified: build/install/launch OK` - All steps passed
+- `Verified: build OK, launch UNTESTED` - Built but couldn't test (explain why)
+- `WIP: not verified` - Work in progress, don't merge
+
+**If white screen after build**:
+1. First try: `adb shell am force-stop <package> && adb shell am start ...`
+2. If still broken: Restart emulator fresh
+3. If still broken: Check Metro for JS errors
+
+---
+
 ## When to Run This Checklist
 
 | Trigger | Depth |
 |---------|-------|
-| Every commit | Quick mental scan |
+| Every commit | Quick mental scan + build verification |
 | Every PR | Full checklist review |
 | End of work session | Retrospective + session handoff |
 | Before release | Full checklist + QA |
@@ -164,6 +192,7 @@ This checklist emerged from the LittleWalks greenfield rebuild (January 2026) as
 
 | Date | Change |
 |------|--------|
+| 2026-01-14 | Added Build Verification section after white screen debugging session revealed need for explicit build/install/launch verification before commits |
 | 2026-01-13 | Added Pre-Flight Checklist, Red Flags, and Quick Validation Commands after instant retro caught inline styles and hardcoded strings that slipped through |
 | 2026-01-09 | Initial version created |
 
