@@ -12,6 +12,60 @@ If the answer is "no," stop and fix it before moving forward.
 
 ---
 
+## Pre-Flight Checklist (Before Building)
+
+Run this BEFORE writing a new screen, component, or feature:
+
+- [ ] **UI Primitives**: What components does this need? (Button, Input, Card, Modal, etc.)
+  - Do styled versions exist in `src/components/ui/`?
+  - If not: **Create them FIRST**, then build the screen
+- [ ] **Translation Keys**: What user-facing strings are needed?
+  - Are they in the localization files?
+  - If not: **Add them FIRST**
+- [ ] **Similar Screen**: Is there an existing screen to reference for patterns?
+- [ ] **Data Requirements**: What data/state does this need? Do the hooks/services exist?
+
+The goal: Never build a screen that requires primitives you don't have. Build bottom-up, not top-down.
+
+---
+
+## Red Flags (Stop Immediately)
+
+If you see yourself typing any of these, **STOP** and fix it:
+
+| Red Flag | What To Do Instead |
+|----------|-------------------|
+| `style={{` in a screen file | Create/use a styled component in `ui/` |
+| `#RRGGBB` or `#RGB` anywhere | Use theme token (`$primary`, `$color`, `$background`) |
+| Quoted English string in JSX | Use `t('_NAMESPACE.KEY')` from localization |
+| `any` type | Define a proper interface/type |
+| Copy-pasting styles from another file | Extract to a shared component |
+| `// TODO` without a ticket | Create the ticket or fix it now |
+
+These are the patterns that create invisible technical debt. Catch them in the moment.
+
+---
+
+## Quick Validation Commands
+
+Run these to catch violations automatically:
+
+```bash
+# Find inline styles in screens (should be zero)
+grep -r "style={{" src/screens/
+
+# Find hardcoded colors (should be zero outside theme/)
+grep -rE "#[0-9A-Fa-f]{3,6}" src/screens/ src/components/
+
+# Find hardcoded strings (review each - should use t())
+grep -rE '>[A-Z][a-z]+.*</' src/screens/
+
+# Find any types (should be zero)
+grep -r ": any" src/
+```
+
+---
+
 ## Architecture & Design
 
 - [ ] **Single Responsibility**: Does each file/function do ONE thing well?
@@ -105,5 +159,12 @@ This checklist emerged from the LittleWalks greenfield rebuild (January 2026) as
 - **Lightweight**: Quick to scan, not a burden
 - **Universal**: Applies to any language/framework
 - **Living**: Add project-specific questions as needed
+
+### Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-01-13 | Added Pre-Flight Checklist, Red Flags, and Quick Validation Commands after instant retro caught inline styles and hardcoded strings that slipped through |
+| 2026-01-09 | Initial version created |
 
 *"The best time to catch a problem is before it becomes a pattern."*
