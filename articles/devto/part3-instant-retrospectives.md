@@ -336,6 +336,8 @@ Suggestion: Red Flags (Stop Immediately If You See These)
 4. **Blocked progress** — offered to fix before continuing
 5. **Self-improving** — suggested enhancements to the checklist itself
 
+**The feedback loop closed:** Those Pre-Flight and Red Flags suggestions? They're now in the actual checklist. The system improved itself. The changelog documents why: *"Added after instant retro caught inline styles and hardcoded strings that slipped through."*
+
 This is what "AI as a first-class engineering role" looks like in practice.
 
 ---

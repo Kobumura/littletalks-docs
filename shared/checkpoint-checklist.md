@@ -48,7 +48,7 @@ These are the patterns that create invisible technical debt. Catch them in the m
 
 ## Quick Validation Commands
 
-Run these to catch violations automatically:
+Run these to catch violations automatically. These examples are for React/TypeScript projects — adapt the patterns for your stack.
 
 ```bash
 # Find inline styles in screens (should be zero)
