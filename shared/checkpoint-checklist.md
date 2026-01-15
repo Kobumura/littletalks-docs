@@ -116,6 +116,18 @@ grep -r ": any" src/
 
 Add project-specific questions here. Examples:
 
+### Native SDK Integration (React Native)
+
+When adding a native SDK (Firebase, Bugsnag, Facebook, AdMob, etc.):
+
+- [ ] **Native initialization**: Added `SdkName.start()` to MainApplication.kt (Android) AND AppDelegate.swift (iOS)?
+- [ ] **Native config**: API keys in native config files (AndroidManifest.xml, Info.plist, strings.xml), not hardcoded in JS?
+- [ ] **Jest mock**: Added mock to `jest.setup.js` so tests run without native module?
+- [ ] **iOS pods**: Noted in PR that `cd ios && pod install` is required after pulling?
+- [ ] **Device tested**: Verified on actual device/emulator, not just unit tests passing?
+
+> **Why this matters**: JS-side `sdk.start()` often isn't enough. Many native SDKs require initialization in the native Application/AppDelegate class BEFORE the React Native bridge loads. Missing this causes runtime crashes that unit tests won't catch.
+
 ### White-Label Projects (LittleWalks)
 - [ ] **Multi-Brand Ready**: Will this work for Brand #2, Brand #3?
 - [ ] **Platform Agnostic**: Works on iOS AND Android?
@@ -136,6 +148,7 @@ Add project-specific questions here. Examples:
 
 **CRITICAL**: Do NOT commit until you've verified the app actually runs.
 
+### Android
 ```bash
 # 1. Build
 cd android && ./gradlew assembleLittletalksDebug
@@ -146,6 +159,16 @@ adb install -r app/build/outputs/apk/littletalks/debug/app-littletalks-debug.apk
 # 3. Launch and verify
 adb shell am start -n com.littletalks.app/com.littlewalksmobile.MainActivity
 # Confirm: App displays correctly (not white screen)
+```
+
+### iOS
+```bash
+# 1. Install pods (if dependencies changed)
+cd ios && pod install
+
+# 2. Build and run
+npx react-native run-ios --scheme LittleTalks
+# Or via Xcode: Open .xcworkspace, select scheme, Run
 ```
 
 **In commit message**, include verification status:
@@ -192,6 +215,7 @@ This checklist emerged from the LittleWalks greenfield rebuild (January 2026) as
 
 | Date | Change |
 |------|--------|
+| 2026-01-15 | Added Native SDK Integration checklist after Bugsnag required native MainApplication.kt init that unit tests didn't catch; added iOS build verification commands |
 | 2026-01-14 | Added Build Verification section after white screen debugging session revealed need for explicit build/install/launch verification before commits |
 | 2026-01-13 | Added Pre-Flight Checklist, Red Flags, and Quick Validation Commands after instant retro caught inline styles and hardcoded strings that slipped through |
 | 2026-01-09 | Initial version created |
