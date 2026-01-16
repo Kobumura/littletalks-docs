@@ -24,6 +24,8 @@ Run this BEFORE writing a new screen, component, or feature:
   - If not: **Add them FIRST**
 - [ ] **Similar Screen**: Is there an existing screen to reference for patterns?
 - [ ] **Data Requirements**: What data/state does this need? Do the hooks/services exist?
+- [ ] **Config Location**: Where do similar configs live? (Don't hardcode if others use BuildConfig/env)
+- [ ] **User Context**: What screen is the user on when they need this feature? (Don't add login buttons to a screen users can't reach without logging in)
 
 The goal: Never build a screen that requires primitives you don't have. Build bottom-up, not top-down.
 
@@ -215,6 +217,7 @@ This checklist emerged from the LittleWalks greenfield rebuild (January 2026) as
 
 | Date | Change |
 |------|--------|
+| 2026-01-16 | Added "Config Location" and "User Context" to Pre-Flight Checklist after OAuth retro caught hardcoded config and misplaced UI |
 | 2026-01-15 | Added Native SDK Integration checklist after Bugsnag required native MainApplication.kt init that unit tests didn't catch; added iOS build verification commands |
 | 2026-01-14 | Added Build Verification section after white screen debugging session revealed need for explicit build/install/launch verification before commits |
 | 2026-01-13 | Added Pre-Flight Checklist, Red Flags, and Quick Validation Commands after instant retro caught inline styles and hardcoded strings that slipped through |
